@@ -19,9 +19,12 @@
   margin: 10px auto;
 }
 .personnage-image{
-  margin: 10px auto;
+  z-index: 5;
+  position: relative;
 }
-
+.ennemie{
+  transform: rotateY(-180deg);
+}
 .info-game{
   background: red;
   height: 100px;
@@ -31,18 +34,50 @@
   background:green;
   height: 150px;
   width: 340px;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   padding: 0px 0 30px 0;
   align-items: flex-end;
+  position: relative;
+  background-image: url("./asset/bg_scene_desert.png");
+
 }
 .personnage{
-  background: yellow;
-  height: 25px;
-  width: 45px;
-  margin: 5px auto;
+
+}
+.action-player{
+  position: relative;
+  transition: left 0.63s ease-in-out;
+  left: 0px;
+}
+.action-player:hover {
+  left: 80px;
 }
 
+.shadow-image-personnage{
+  width: 50px;
+  height: 35px;
+  background: black;
+  z-index: 2;
+  bottom: 20px;
+  transform: perspective(150px) rotateX(70deg);
+  position: absolute;
+  border-radius: 15px;
+  opacity: 0.5;
+
+}
+
+.terrain{
+  position: absolute;
+  width: 240px;
+  height: 70px;
+  background: grey;
+  border: 5px solid white;
+  z-index: 0;
+  transform: perspective(150px) rotateX(60deg);
+  bottom: 0px;
+  background-image: url("./asset/bg_combat_desert.png");
+}
 .container-game-animation-bottom{
   display: flex;
   align-items: center;
